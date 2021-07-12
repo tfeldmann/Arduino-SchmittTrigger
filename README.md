@@ -1,5 +1,7 @@
 # Arduino-SchmittTrigger
 
+[![CI](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/test.yml/badge.svg)](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/test.yml)
+
 # Usage:
 
 ```cpp
