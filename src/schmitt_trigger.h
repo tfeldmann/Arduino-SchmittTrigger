@@ -4,7 +4,10 @@ template <typename T = int>
 class SchmittTrigger
 {
 public:
-    SchmittTrigger() {}
+    SchmittTrigger()
+    {
+    }
+
     SchmittTrigger(T lower, T upper)
     {
         set_thresholds(lower, upper);
