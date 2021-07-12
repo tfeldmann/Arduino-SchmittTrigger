@@ -1,6 +1,6 @@
 # Arduino-SchmittTrigger
 
-[![CI](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/test.yml/badge.svg)](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/test.yml)
+[![tests](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/tests.yml/badge.svg)](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/tests.yml)
 
 # Usage:
 
