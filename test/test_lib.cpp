@@ -1,6 +1,35 @@
 #include <SchmittTrigger.h>
 #include <unity.h>
 
+void test_integers()
+{
+    SchmittTrigger<int> s(8, 10);
+    s.input(-20);
+    TEST_ASSERT_EQUAL(s.output(), false);
+    s.input(12);
+    TEST_ASSERT_EQUAL(s.output(), true);
+    s.input(9);
+    TEST_ASSERT_EQUAL(s.output(), true);
+    s.input(4);
+    TEST_ASSERT_EQUAL(s.output(), false);
+}
+
+void test_floats()
+{
+    SchmittTrigger<float> s;
+    s.set_thresholds(0.3, 0.6);
+    s.input(0);
+    TEST_ASSERT_EQUAL(s.output(), false);
+    s.input(1.0);
+    TEST_ASSERT_EQUAL(s.output(), true);
+    s.input(0.5);
+    TEST_ASSERT_EQUAL(s.output(), true);
+    s.input(0.2);
+    TEST_ASSERT_EQUAL(s.output(), false);
+    s.input(0.5);
+    TEST_ASSERT_EQUAL(s.output(), false);
+}
+
 void test_trigger_init_with_values()
 {
     SchmittTrigger<int> s(-10, 10);
@@ -53,6 +82,8 @@ void test_float()
 int main()
 {
     UNITY_BEGIN();
+    RUN_TEST(test_integers);
+    RUN_TEST(test_floats);
     RUN_TEST(test_trigger_init_with_values);
     RUN_TEST(test_trigger_init_without_values);
     RUN_TEST(test_float);
