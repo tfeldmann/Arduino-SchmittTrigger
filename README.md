@@ -17,7 +17,7 @@ On readings lower than `800` `PIN_LED` will be pulled `LOW`.
 On readings between `800` and `900` the LED state persists.
 
 ```cpp
-include <schmitt_trigger.h>
+#include <schmitt_trigger.h>
 
 #define PIN_LED 13
 
