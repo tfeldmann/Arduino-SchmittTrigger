@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-pio lib install "tfeldmann/Schmitt trigger@^1.0"
+pio lib install "tfeldmann/SchmittTrigger"
 ```
 
 ## Example usage:
