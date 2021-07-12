@@ -1,4 +1,4 @@
-#include <schmitt_trigger.h>
+#include <SchmittTrigger.h>
 #include <unity.h>
 
 void test_trigger_init_with_values()

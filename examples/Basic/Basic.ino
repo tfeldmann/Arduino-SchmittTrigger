@@ -1,4 +1,4 @@
-#include <schmitt_trigger.h>
+#include <SchmittTrigger.h>
 
 SchmittTrigger<int> st(800, 900);
 
