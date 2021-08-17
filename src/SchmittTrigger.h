@@ -8,22 +8,22 @@ public:
     {
     }
 
-    SchmittTrigger(T lower, T upper)
+    SchmittTrigger(T switch_off_point, T switch_on_point)
     {
-        set_thresholds(lower, upper);
+        set_thresholds(switch_off_point, switch_on_point);
     }
 
-    void set_thresholds(T lower, T upper)
+    void set_thresholds(T switch_off_point, T switch_on_point)
     {
-        lower_ = lower;
-        upper_ = upper;
+        switch_off_point_ = switch_off_point;
+        switch_on_point_ = switch_on_point;
     }
 
     void input(T value)
     {
-        if (value >= upper_)
+        if (value >= switch_on_point_)
             state_ = true;
-        if (value <= lower_)
+        if (value <= switch_off_point_)
             state_ = false;
     }
 
@@ -33,7 +33,7 @@ public:
     }
 
 private:
-    T lower_ = 0;
-    T upper_ = 0;
+    T switch_off_point_ = 0;
+    T switch_on_point_ = 0;
     bool state_ = false;
 };
