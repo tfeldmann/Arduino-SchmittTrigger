@@ -19,14 +19,18 @@ On readings between `800` and `900` the LED state persists.
 ```cpp
 #include <SchmittTrigger.h>
 
-#define PIN_LED 13
-
+// 800 is the switch off point
+// 900 is the switch on point
 SchmittTrigger<int> st(800, 900);
 
-void setup() {}
+void setup()
+{
+  pinMode(PIN_LED, OUTPUT);
+}
 
-void loop() {
-    st.input(analogRead(A0));
-    digitalWrite(PIN_LED, st.output());
+void loop()
+{
+  st.input(analogRead(A0));
+  digitalWrite(PIN_LED, st.output());
 }
 ```
