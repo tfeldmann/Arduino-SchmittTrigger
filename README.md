@@ -1,6 +1,6 @@
 # Arduino-SchmittTrigger
 
-[![tests](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/tests.yml/badge.svg)](https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/tests.yml)
+[![tests][gh-tests-badge]][gh-tests-link]
 
 ## Installation
 
@@ -34,3 +34,8 @@ void loop()
   digitalWrite(PIN_LED, st.output());
 }
 ```
+
+<!-- badges and links -->
+
+[gh-tests-badge]: https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/tests.yml/badge.svg
+[gh-tests-link]: https://github.com/tfeldmann/Arduino-SchmittTrigger/actions/workflows/tests.yml
