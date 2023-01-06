@@ -1,30 +1,33 @@
 #pragma once
 
 template <typename T = int>
-class SchmittTrigger
-{
+class SchmittTrigger {
 public:
     SchmittTrigger()
+        : lower_(0)
+        , upper_(0)
+        , state_(false) {};
+
+    SchmittTrigger(T lower, T upper)
+        : lower_(lower)
+        , upper_(upper)
+        , state_(false) {};
+
+    void set_thresholds(T lower, T upper)
     {
+        lower_ = lower;
+        upper_ = upper;
     }
 
-    SchmittTrigger(T switch_off_point, T switch_on_point)
+    bool input(T value)
     {
-        set_thresholds(switch_off_point, switch_on_point);
-    }
-
-    void set_thresholds(T switch_off_point, T switch_on_point)
-    {
-        switch_off_point_ = switch_off_point;
-        switch_on_point_ = switch_on_point;
-    }
-
-    void input(T value)
-    {
-        if (value >= switch_on_point_)
-            state_ = true;
-        if (value <= switch_off_point_)
+        if (value <= lower_) {
             state_ = false;
+        }
+        if (value >= upper_) {
+            state_ = true;
+        }
+        return state_;
     }
 
     bool output()
@@ -33,7 +36,7 @@ public:
     }
 
 private:
-    T switch_off_point_ = 0;
-    T switch_on_point_ = 0;
-    bool state_ = false;
+    T lower_;
+    T upper_;
+    bool state_;
 };
